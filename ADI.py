@@ -91,7 +91,7 @@ def process_q(original_stack):
 
 
 
-user_input = input("IEntrada: ")
+user_input = input("Entrada: ")
 
 processed_stack = process_sentence(user_input)
 print("\nContenido de la pila original:")
