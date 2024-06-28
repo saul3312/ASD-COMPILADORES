@@ -25,7 +25,6 @@ def process_q(original_stack):
     
     print("Contenido de la pila nueva", new_stack)
     while original_stack or new_stack:
-    # Verificar si la pila original no está vacía y si tiene al menos un elemento y ese elemento es "select"
         #print("valores a comparar nueva pila: "+new_stack[-1]+" pila original: "+original_stack[-1])
         if new_stack and original_stack:
             if new_stack[-1] == "\0" and original_stack[-1] == "\0":
@@ -38,27 +37,22 @@ def process_q(original_stack):
                 new_stack.append("E'")
                 new_stack.append("T")  
             elif new_stack[-1]=="E'" and original_stack[-1] == "+":
-                # Acciones específicas si el primer elemento es "select"
                 new_stack.pop() 
                 new_stack.append("E'")
                 new_stack.append("T") 
                 new_stack.append("+") 
             elif new_stack[-1]=="E'" and original_stack[-1] == "-":
-                # Acciones específicas si el primer elemento es "select"
                 new_stack.pop() 
                 new_stack.append("E")
                 new_stack.append("T") 
                 new_stack.append("-")
             elif new_stack[-1]=="E'" and (original_stack[-1] == ")" or original_stack[-1] == "\0"):
-                # Acciones específicas si el primer elemento es "select"
                 new_stack.pop()
             elif new_stack[-1]=="T" and (original_stack[-1] == "(" or original_stack[-1] == "num" or original_stack[-1] == "id"):
-                # Acciones específicas si el primer elemento es "select"
                 new_stack.pop()
                 new_stack.append("T'")
                 new_stack.append("F")
             elif new_stack[-1]=="T'" and (original_stack[-1] == "+" or original_stack[-1] == "-" or original_stack[-1] == ")" or original_stack[-1] == "\0"):
-                # Acciones específicas si el primer elemento es "select"
                 new_stack.pop()
             elif new_stack[-1]=="T'" and original_stack[-1] == "*":
                 new_stack.pop()
