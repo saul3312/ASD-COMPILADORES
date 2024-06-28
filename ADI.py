@@ -1,3 +1,4 @@
+def process_sentence(sentence):
     # Palabras clave y operadores
     keywords = ["+", "-", "*", "/", "(", ")", "num", "\0"]
 
